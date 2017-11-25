@@ -1,0 +1,37 @@
+.CircularLanguageChanger {
+
+}
+
+.CircularLanguageChanger .Wrapper {
+  position: relative;
+}
+
+.CircularLanguageChanger .Option {
+  line-height: 1;
+  font-weight: 600;
+  width: 2.85em;
+  height: 2.85em;
+  border-radius: 5.71em;
+  border: solid 1px #ebecee;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.CircularLanguageChanger .Option:hover {
+
+}
+
+.CircularLanguageChanger .OptionsList {
+  position: absolute;
+  z-index: 1;
+  top: 3.21em;
+  left: 0;
+  display: flex;
+  margin-top: 0.5em;
+  flex-direction: column;
+}
+
