@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import store from "./store/createStore";
 import {createBrowserHistory} from "history";
 import {IntlProvider} from "react-intl-redux";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const history = createBrowserHistory();
 
@@ -15,7 +16,9 @@ ReactDOM.render(
   <Provider store={store}>
     <IntlProvider>
       <Router history={history}>
-        <App/>
+        <MuiThemeProvider>
+          <App/>
+        </MuiThemeProvider>
       </Router>
     </IntlProvider>
   </Provider>
