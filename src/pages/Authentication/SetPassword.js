@@ -1,6 +1,6 @@
 
 import React,{Component} from 'react';
-class Register extends Component {
+class SetPassword extends Component {
   
   constructor(props) {
     super(props);
@@ -11,10 +11,10 @@ class Register extends Component {
   render() {
     return (
       <div>
-       <span>Register</span>
+       <span>Set Password</span>
       </div>
     );
   }
 }
 
-export default Register;
+export default SetPassword;

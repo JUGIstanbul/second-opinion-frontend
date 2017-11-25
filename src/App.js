@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Redirect, Route, Switch} from "react-router-dom";
-import Authentication  from './layout/Authentication/Authentication';
+import Authentication from './layout/Authentication/Authentication';
+import LandingPage from "./pages/landing/LandingPage";
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
         <Route path="/reset" render={() => <Redirect to="/auth/reset"/>}/>
         <Route path="/auth" component={Authentication}/>
         <Route path="/404" render={() => <div>not match</div>}/>
-        <Route path="/" component={() => <div>Fuck you fuck!!</div>}/>
+        <Route path="/" component={LandingPage}/>
       </Switch>
     );
   }
