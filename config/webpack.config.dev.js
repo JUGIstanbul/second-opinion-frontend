@@ -128,7 +128,7 @@ module.exports = {
         // back to the "file" loader at the end of the loader list.
         oneOf: [
           // "url" loader works like "file" loader except that it embeds assets
-          // smaller than specified limit in bytes as data URLs to avoid requests.
+          // smaller than specified limit in bytes as Response URLs to avoid requests.
           // A missing `test` is equivalent to a match.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
