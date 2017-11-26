@@ -18,9 +18,7 @@ ReactDOM.render(
   <Provider store={store}>
     <IntlProvider>
       <Router history={history}>
-        <MuiThemeProvider>
-          <App />
-        </MuiThemeProvider>
+        <App />
       </Router>
     </IntlProvider>
   </Provider>,

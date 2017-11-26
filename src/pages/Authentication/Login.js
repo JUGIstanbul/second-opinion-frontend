@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as _ from 'lodash';
-import { FormField } from '../../components/common';
-import { control } from '../../utils/form';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {FormField} from "../../components/common";
+import {control} from "../../utils/form";
 
-import { auth } from '../../store/action/auth';
-import { Paper, Grid, Button } from 'material-ui';
+import {auth} from '../../store/action/auth';
+import {Button, FormControl, Grid} from "material-ui";
 
 class Login extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -15,33 +15,37 @@ class Login extends Component {
       password: '',
       isSignIn: true,
     };
-    this.onLogin = this.onLogin.bind(this);
+    this.onLogin = this.onLogin.bind(this)
   }
-
+  
   onLogin(e) {
     this.props.auth(this.state);
   }
-
+  
   render() {
     return (
-      <Grid container spacing={24}>
-        <Grid item xs={12} sm={6} md={8}>
-          <Paper>
-            <img src="/images/landing-page.jpg" alt="" />
-          </Paper>
+      <Grid container  spacing={24} alignContent={'center'} alignItems={'center'} style={{textAlign: 'center'}}>
+        <Grid item xs={12}  direction={'Row'} >
+          <FormField
+            type="text"
+            label="Username"
+            {...control(this, 'username')}
+          />
         </Grid>
-
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper>
-            <FormField type="text" label="Username" {...control(this, 'username')} />
-            <FormField type="password" label="Password" {...control(this, 'password')} />
-
-            <Button raised color="primary" onClick={this.onLogin}>
-              LOGIN
-            </Button>
-          </Paper>
+        <Grid item xs={12}  direction={'Row'}>
+          <FormField
+            type="password"
+            label="Password"
+            {...control(this, 'password')}
+          />
+        </Grid>
+      
+        <Grid item xs={12}   direction={'Row'}>
+          <Button raised color="primary" onClick={this.onLogin}>LOGIN</Button>
         </Grid>
       </Grid>
+      
+      
     );
   }
 }
@@ -51,6 +55,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  auth,
+  auth
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
