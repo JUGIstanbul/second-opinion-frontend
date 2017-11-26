@@ -134,7 +134,7 @@ module.exports = {
         // back to the "file" loader at the end of the loader list.
         oneOf: [
           // "url" loader works just like "file" loader but it also embeds
-          // assets smaller than specified size as data URLs to avoid requests.
+          // assets smaller than specified size as Response URLs to avoid requests.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),

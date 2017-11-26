@@ -3,9 +3,11 @@ import './App.css';
 import {Redirect, Route, Switch} from "react-router-dom";
 import Authentication from './layout/Authentication/Authentication';
 import LandingPage from "./pages/landing/LandingPage";
+import axiosMock from "./client/axiosMock/axiosMock";
 
 class App extends Component {
   render() {
+      axiosMock;
     return (
       <Switch>
         <Route path="/login" render={() => <Redirect to="/auth/login"/>}/>

@@ -1,5 +1,6 @@
 export {
     baseAPI,
     authSignInAPI,
-    authSignUpAPI
+    authSignUpAPI,
+    authSignInMockAPI
 }from './client'
