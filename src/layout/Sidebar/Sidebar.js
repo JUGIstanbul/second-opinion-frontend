@@ -6,12 +6,13 @@ export default class Sidebar extends Component {
 
   render() {
     const logoStyle = {
-      padding: '24px'
+      padding: '24px',
+      
     };
     return (
       <div>
         <CardMedia style={logoStyle}>
-          <img src="/images/logo.jpg" alt="" />
+          <img style={{maxWidth: '200px'}} src="/images/logo.jpg" alt="" />
         </CardMedia>
         <MenuList>
           <MenuItem>Submit a Case</MenuItem>
