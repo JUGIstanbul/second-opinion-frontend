@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 class Account extends Component {
   render() {
-    return (
-      <div>
-        Account Page
-      </div>
-    );
+    return <div>Account Page</div>;
   }
 }
 

@@ -4,11 +4,13 @@ import { signIn } from './Response/signIn';
 import { signUp } from './Response/signUp';
 import { updateAccountInfo } from './Response/updateAccountInfo';
 import { viewAccountInfo } from './Response/viewAccountInfo';
+import { createCase } from './Response/createCase';
 import {
   AXIOS_MOCK_SIGN_IN,
   AXIOS_MOCK_SIGN_UP,
   AXIOS_MOCK_UPDATE_ACCOUNT_INFO,
   AXIOS_MOCK_VIEW_ACCOUNT_INFO,
+  CREATE_CASE,
 } from '../api';
 
 // This sets the mock adapter on the default instance
@@ -18,6 +20,8 @@ mock.onPost(AXIOS_MOCK_SIGN_UP).reply(201, signUp);
 mock.onGet(AXIOS_MOCK_VIEW_ACCOUNT_INFO).reply(200, viewAccountInfo);
 mock.onPut(AXIOS_MOCK_UPDATE_ACCOUNT_INFO).reply(204, updateAccountInfo);
 mock.onPost(AXIOS_MOCK_SIGN_IN).reply(201, signIn);
+
+mock.onPost(CREATE_CASE).reply(201, createCase);
 
 /*Axios.post(AXIOS_MOCK_SIGN_UP)
     .then(function(response) {

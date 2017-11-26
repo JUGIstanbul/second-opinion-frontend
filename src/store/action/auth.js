@@ -63,7 +63,7 @@ export const auth = data => {
     }
 
     debugger;
-    Axios.post(mockUrl, authData)
+    return Axios.post(mockUrl, authData)
       .then(response => {
         debugger;
         console.log(response.data);

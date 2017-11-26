@@ -35,7 +35,6 @@ const authLogout = (oldState, action) => {
 };
 
 const authReducer = (oldState = initialState, action) => {
-  console.log(oldState, action.type);
   switch (action.type) {
     case actionTypes.AUTH_START:
       return authStart(oldState);
