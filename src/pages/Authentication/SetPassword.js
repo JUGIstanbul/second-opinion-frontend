@@ -1,17 +1,14 @@
+import React, { Component } from 'react';
 
-import React,{Component} from 'react';
 class SetPassword extends Component {
-  
   constructor(props) {
     super(props);
-    this.state = {
-      errorMessage: '',
-    };
+    this.state = {};
   }
   render() {
     return (
       <div>
-       <span>Set Password</span>
+        <span>Set Password</span>
       </div>
     );
   }

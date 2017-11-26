@@ -1,17 +1,14 @@
+import React, { Component } from 'react';
 
-import React,{Component} from 'react';
 class Login extends Component {
-  
   constructor(props) {
     super(props);
-    this.state = {
-      errorMessage: '',
-    };
+    this.state = {};
   }
   render() {
     return (
       <div>
-       <span>Hello</span>
+        <span>Hello</span>
       </div>
     );
   }
