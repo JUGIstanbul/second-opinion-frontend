@@ -100,5 +100,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.10.0"
   }
 }
