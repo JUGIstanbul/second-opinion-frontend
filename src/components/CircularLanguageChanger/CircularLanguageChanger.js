@@ -1,67 +1,71 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {updateIntl} from 'react-intl-redux';
+import { connect } from 'react-redux';
+import { updateIntl } from 'react-intl-redux';
 import ClickOutside from 'react-click-outside';
 import TimesIcon from 'react-icons/lib/ti/times';
 import * as translations from '../../translations';
 import * as styledClasses from 'CircularLanguageChanger.css';
 
 export class CircularLanguageChanger extends Component {
+  /* eslint-disable next-line*/
   static defaultProps = {
     isOpen: false,
     value: 'tr',
     options: Object.keys(translations),
   };
-  
+  /* eslint-enable */
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
     value: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(PropTypes.string),
     changeLanguage: PropTypes.func.isRequired,
   };
-  
+
   constructor(props) {
     super(props);
     this.state = {
       isOpen: props.isOpen,
     };
   }
-  
+
   componentWillReceiveProps(nextProps) {
-    const {isOpen} = this.props;
+    const { isOpen } = this.props;
     if (nextProps.isOpen !== isOpen) {
-      this.setState({isOpen: nextProps.isOpen});
+      this.setState({ isOpen: nextProps.isOpen });
     }
   }
-  
+
   handleButtonClick = () => {
-    this.setState({isOpen: !this.state.isOpen});
+    this.setState({ isOpen: !this.state.isOpen });
   };
-  
+
   handleOptionClick = value => {
-    const {changeLanguage} = this.props;
-    this.setState({isOpen: false}, () => changeLanguage(value));
+    const { changeLanguage } = this.props;
+    this.setState({ isOpen: false }, () => changeLanguage(value));
   };
-  
+
   render() {
-    const {options, value} = this.props;
-    const {isOpen} = this.state;
+    const { options, value } = this.props;
+    const { isOpen } = this.state;
     return (
       <div className={styledClasses.CircularLanguageChanger}>
-        <ClickOutside className={styledClasses.Wrapper}
-                      onClickOutside={isOpen ? this.handleButtonClick : f => f}>
-          
+        <ClickOutside
+          className={styledClasses.Wrapper}
+          onClickOutside={isOpen ? this.handleButtonClick : f => f}
+        >
           <div className={styledClasses.Option} onClick={this.handleButtonClick} isOpen={isOpen}>
-            {isOpen ? (<TimesIcon color="#FFF" size="1.2em"/>) : (<span>{value}</span>)}
+            {isOpen ? <TimesIcon color="#FFF" size="1.2em" /> : <span>{value}</span>}
           </div>
           {isOpen && (
             <div className={styledClasses.OptionsList}>
               {options.filter(option => option !== value).map(option => (
-                <div className={styledClasses.Option}
-                     key={option}
-                     value={option}
-                     onClick={() => this.handleOptionClick(option)}>
+                <div
+                  className={styledClasses.Option}
+                  key={option}
+                  value={option}
+                  onClick={() => this.handleOptionClick(option)}
+                >
                   <span>{option}</span>
                 </div>
               ))}
@@ -73,15 +77,12 @@ export class CircularLanguageChanger extends Component {
   }
 }
 
-const mapStateToProps = ({intl: {locale}}) => ({
+const mapStateToProps = ({ intl: { locale } }) => ({
   value: locale,
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeLanguage: value =>
-    dispatch(updateIntl({locale: value, messages: translations[value]})),
+  changeLanguage: value => dispatch(updateIntl({ locale: value, messages: translations[value] })),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  CircularLanguageChanger
-);
+export default connect(mapStateToProps, mapDispatchToProps)(CircularLanguageChanger);

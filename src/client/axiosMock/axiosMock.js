@@ -1,13 +1,15 @@
 import Axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import {signIn} from "./Response/signIn";
-import {signUp} from "./Response/signUp";
-import {updateAccountInfo} from "./Response/updateAccountInfo";
-import {viewAccountInfo} from "./Response/viewAccountInfo";
+import { signIn } from './Response/signIn';
+import { signUp } from './Response/signUp';
+import { updateAccountInfo } from './Response/updateAccountInfo';
+import { viewAccountInfo } from './Response/viewAccountInfo';
 import {
-    AXIOS_MOCK_SIGN_IN, AXIOS_MOCK_SIGN_UP, AXIOS_MOCK_UPDATE_ACCOUNT_INFO,
-    AXIOS_MOCK_VIEW_ACCOUNT_INFO
-} from "../api";
+  AXIOS_MOCK_SIGN_IN,
+  AXIOS_MOCK_SIGN_UP,
+  AXIOS_MOCK_UPDATE_ACCOUNT_INFO,
+  AXIOS_MOCK_VIEW_ACCOUNT_INFO,
+} from '../api';
 
 // This sets the mock adapter on the default instance
 var mock = new MockAdapter(Axios);
@@ -37,4 +39,4 @@ Axios.post(AXIOS_MOCK_SIGN_IN)
         console.log('AXIOS_MOCK_SIGN_IN', response.Response);
     });*/
 
-export default {}
+export default {};

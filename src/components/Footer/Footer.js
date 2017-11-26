@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
@@ -6,13 +6,9 @@ class Footer extends Component {
       textAlign: 'center',
       backgroundColor: 'rgb(79, 82, 88)',
       color: 'white',
-      padding: '24px'
+      padding: '24px',
     };
-    return (
-      <div style={footerStyle}>
-        © Second Opinion.
-      </div>
-    )
+    return <div style={footerStyle}>© Second Opinion.</div>;
   }
 }
 

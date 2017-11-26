@@ -1,19 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as fn from 'lodash';
-import { TextField } from "material-ui";
-
-
-
+import { TextField } from 'material-ui';
 
 let newId = 0;
 
 const Input = props => {
-
   return (
-
-
-
     <TextField
       floatingLabelText={props.label}
       disabled={props.disabled}
@@ -23,14 +16,11 @@ const Input = props => {
         props.onChange(evt.target.value);
       }}
     />
-
-  )
+  );
 };
 
-
-const Checkable = props => (
- {
-   /*
+const Checkable = props => ({
+  /*
    <Checkbox
     disabled={props.disabled}
     {...fn.omit(props, ['error', 'hasRequired'])}
@@ -42,8 +32,7 @@ const Checkable = props => (
     checked={!!props.value}
   />
   */
- }
-);
+});
 
 const Textarea = props => (
   <textarea
@@ -55,9 +44,8 @@ const Textarea = props => (
     }}
   />
 );
-const SelectBox = props => (
- {
-   /*
+const SelectBox = props => ({
+  /*
    <Select
     disabled={props.disabled}
     simpleValue={!props.objectValue}
@@ -77,8 +65,7 @@ const SelectBox = props => (
     name={props.name.toString()}
   />
   */
- }
-);
+});
 
 const FormField = props => {
   let Component;
@@ -100,31 +87,24 @@ const FormField = props => {
       Component = Checkable;
       break;
     default:
-
       Component = Input;
   }
 
-  const inputProps = fn.omit(props, [
-    'className',
-    'style',
-  ]);
+  const inputProps = fn.omit(props, ['className', 'style']);
   const name = props.name || newId++;
   const id = props.id || props.name;
   inputProps.id = id;
   inputProps.name = name.toString();
 
-
   if (labelFirst) {
     return (
       <div>
-
-
         <Component {...inputProps} />
       </div>
     );
   } else {
     return (
-      <div >
+      <div>
         <Component {...inputProps} />
 
         <label htmlFor={id}>
@@ -136,7 +116,6 @@ const FormField = props => {
             </sup>
           )}
         </label>
-
       </div>
     );
   }
