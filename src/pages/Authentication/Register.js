@@ -1,7 +1,5 @@
-
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import TextField from '../../components/TextField/TextField';
-import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
 
 
@@ -9,37 +7,37 @@ class Register extends Component {
   
   constructor(props) {
     super(props);
-
+    
     this.state = {
       
-      userName : '',
-      userNameRequired : '',
+      userName: '',
+      userNameRequired: '',
       password: '',
       passwordRequired: '',
       eMail: '',
       eMailRequired: '',
       telephone: '',
       telephoneRequire: ''
-
-
+      
+      
     };
   }
-
+  
   handleChange = (event) => {
-    if(event.target.value === "5"){
+    if (event.target.value === "5") {
       this.setState({
         object: event.target.value,
-        telephoneRequire : 'Require'
+        telephoneRequire: 'Require'
       });
     }
-    else{
+    else {
       this.setState({
-        telephoneRequire : '',
+        telephoneRequire: '',
         object: event.target.value,
       });
     }
     
-   
+    
   };
   
   render() {
@@ -52,7 +50,7 @@ class Register extends Component {
           errorText={this.state.userNameRequired}
           onChange={this.handleChange}
         />
-        <br />
+        <br/>
         <TextField
           hintText="Password"
           type="password"
@@ -60,7 +58,7 @@ class Register extends Component {
           errorText={this.state.passwordRequired}
           onChange={this.handleChange}
         />
-        <br />
+        <br/>
         <TextField
           hintText="Email"
           type="text"
@@ -68,7 +66,7 @@ class Register extends Component {
           errorText={this.state.eMailRequired}
           onChange={this.handleChange}
         />
-        <br />
+        <br/>
         <TextField
           hintText="Telephone"
           type="text"
@@ -76,13 +74,13 @@ class Register extends Component {
           value={this.state.telephone}
           onChange={this.handleChange}
         />
-       <br/>
+        <br/>
         <RaisedButton
-         backgroundColor="#a4c639"
-          label="SIGN UP" 
-           />
+          backgroundColor="#a4c639"
+          label="SIGN UP"
+        />
       </div>
-      
+    
     );
   }
 }
