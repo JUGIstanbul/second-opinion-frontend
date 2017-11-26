@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
-import MenuItem from 'material-ui/MenuItem';
 import {CardMedia} from "material-ui/Card/index";
+import {MenuItem, MenuList} from "material-ui";
 
 export default class Sidebar extends Component {
 
@@ -13,11 +13,14 @@ export default class Sidebar extends Component {
         <CardMedia style={logoStyle}>
           <img src="/images/logo.jpg" alt="" />
         </CardMedia>
+        <MenuList>
           <MenuItem>Submit a Case</MenuItem>
           <MenuItem>Solve Medical Cases</MenuItem>
           <MenuItem>How it Works</MenuItem>
           <MenuItem>About Us</MenuItem>
           <MenuItem>Contact Us</MenuItem>
+        </MenuList>
+        
       </div>
     );
   }
