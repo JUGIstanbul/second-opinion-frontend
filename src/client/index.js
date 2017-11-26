@@ -1,6 +1,1 @@
-export {
-    baseAPI,
-    authSignInAPI,
-    authSignUpAPI,
-    authSignInMockAPI
-}from './client'
+export { baseAPI, authSignInAPI, authSignUpAPI, authSignInMockAPI } from './client';

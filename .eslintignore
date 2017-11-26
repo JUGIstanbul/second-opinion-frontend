@@ -1,0 +1,8 @@
+
+public/
+scripts/
+config/
+node_modules/
+src/registerServiceWorker.js
+src/App.test.js
+src

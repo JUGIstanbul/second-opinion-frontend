@@ -1,15 +1,15 @@
 import * as actionTypes from '../action/actionTypes';
-import {updateObject} from "../util/util.js";
+import { updateObject } from '../util/util.js';
 
 const initialState = {
   token: null,
   userId: null,
   error: null,
-  loading: false
+  loading: false,
 };
 
 const authStart = oldState => {
-  return updateObject(oldState, {error: null, loading: true});
+  return updateObject(oldState, { error: null, loading: true });
 };
 
 const authSuccess = (oldState, action) => {
@@ -23,20 +23,19 @@ const authSuccess = (oldState, action) => {
 const authFail = (oldState, action) => {
   return updateObject(oldState, {
     error: action.error,
-    loading: false
+    loading: false,
   });
 };
 
 const authLogout = (oldState, action) => {
   return updateObject(oldState, {
     token: null,
-    userId: null
+    userId: null,
   });
 };
 
-
 const authReducer = (oldState = initialState, action) => {
-  console.log(oldState,action.type);
+  console.log(oldState, action.type);
   switch (action.type) {
     case actionTypes.AUTH_START:
       return authStart(oldState);
