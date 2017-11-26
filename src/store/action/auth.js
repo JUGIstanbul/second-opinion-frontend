@@ -37,28 +37,33 @@ export const authFailed = (error) => {
     }
 };
 
-export const auth = (email, password, isSignIn) => {
+export const auth = (data) => {
+    debugger;
     return dispatch => {
         dispatch(authStart());
         const authData = {
-            email: email,
-            password: password,
+            username:data.username,
+            password:data.password,
             returnSecureToken: true
         };
 
         let client = go.authSignUpAPI;
-        if (isSignIn) {
+        if (data.isSignIn) {
             client = go.authSignInAPI;
         }
         client.post(null, authData)
             .then(response => {
+              debugger;
                 console.log(response.data);
                 dispatch(authSuccess(response.data.localId, response.data.idToken));
                 dispatch(checkAuthTimeout(response.data.expiresIn));
+
             })
             .catch(error => {
+              debugger;
                 console.log(error.response);
                 dispatch(authFailed(error.response.data.error));
             });
+
     }
 };
