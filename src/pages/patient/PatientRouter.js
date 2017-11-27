@@ -5,7 +5,6 @@ import CreateCase from './CreateCase/CreateCase';
 import Account from './Account/Account';
 import MyCases from './MyCases/MyCases';
 
-
 export default function PatientRouter({ match }) {
   return (
     <Switch>
@@ -14,10 +13,6 @@ export default function PatientRouter({ match }) {
       <Route path={`${match.url}/createcase`} component={CreateCase} />
 
       <Route path={match.url} render={() => <Redirect to="/patient/cases" />} />
-
-
-
     </Switch>
   );
 }
-

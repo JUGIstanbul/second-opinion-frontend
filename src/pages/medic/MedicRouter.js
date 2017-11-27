@@ -3,9 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 class MedicRouter extends Component {
   render() {
-    return (
-     <div>Medic Router</div>
-    );
+    return <div>Medic Router</div>;
   }
 }
 

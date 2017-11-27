@@ -1,35 +1,34 @@
-import React, {Component} from 'react';
-import {FormField} from "../../components/common";
-import {control} from "../../utils/form";
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { FormField } from '../../components/common';
+import { control } from '../../utils/form';
+import { connect } from 'react-redux';
 import * as _ from 'lodash';
 
 import {auth} from '../../store/action/auth';
 import {Button, Card, CardMedia, FormControl, Grid, Paper} from "material-ui";
 
+
 class Register extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      email: "",
-      phone: "",
+      username: '',
+      password: '',
+      email: '',
+      phone: '',
       isSignIn: false,
     };
-    
-    
-    this.onRegister = this.onRegister.bind(this)
+
+    this.onRegister = this.onRegister.bind(this);
   }
-  
-  
+
   onRegister(e) {
     this.props.auth(this.state);
   }
-  
+
   render() {
     return (
+
       <Grid container  spacing={24} alignContent={'center'} alignItems={'center'} style={{textAlign: 'center'}}>
         <Grid item xs={12}  direction={'Row'} >
           <FormField
@@ -72,6 +71,6 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  auth
+  auth,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
