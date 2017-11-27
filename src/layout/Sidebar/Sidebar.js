@@ -10,7 +10,7 @@ export default class Sidebar extends Component {
     return (
       <div>
         <CardMedia style={logoStyle}>
-          <img src="/images/logo.jpg" alt="" />
+          <img style={{maxWidth: '200px'}} src="/images/logo.jpg" alt="" />
         </CardMedia>
         <MenuList>
           <MenuItem>Submit a Case</MenuItem>
