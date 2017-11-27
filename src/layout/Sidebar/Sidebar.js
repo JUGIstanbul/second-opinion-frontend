@@ -1,13 +1,11 @@
-import React , {Component} from 'react';
-import {CardMedia} from "material-ui/Card/index";
-import {MenuItem, MenuList} from "material-ui";
+import React, { Component } from 'react';
+import { CardMedia } from 'material-ui/Card/index';
+import { MenuItem, MenuList } from 'material-ui';
 
 export default class Sidebar extends Component {
-
   render() {
     const logoStyle = {
       padding: '24px',
-      
     };
     return (
       <div>
@@ -21,7 +19,6 @@ export default class Sidebar extends Component {
           <MenuItem>About Us</MenuItem>
           <MenuItem>Contact Us</MenuItem>
         </MenuList>
-        
       </div>
     );
   }

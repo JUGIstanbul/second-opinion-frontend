@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Snackbar, Chip, Grid, CardMedia } from 'material-ui';
+import { Button,Snackbar,Chip } from 'material-ui';
 import { connect } from 'react-redux';
 import { DatePicker } from 'material-ui-pickers';
 import { FormField } from '../../../components/common';
@@ -138,6 +139,48 @@ class CreateCase extends Component {
 
 
       </Layout>
+      <div>
+        <h2>Create Case</h2>
+
+        <div>
+          <DatePicker value={illnessStartDate} onChange={this.handleDateChange} />
+
+          <FormField type="textarea" label="symptoms" {...control(this, 'symptoms')} />
+
+          <FormField type="textarea" label="note" {...control(this, 'note')} />
+
+
+          <div>
+            <h6>medicine</h6>
+            {this.state.medicine.map(data => {
+              return (
+                <Chip
+                  label={data.label}
+                  key={data.id}
+                  onRequestDelete={this.handleRequestDelete(data)}
+                  className="chip wrapper"
+                />
+              );
+            })}
+          </div>
+
+          <Button raised color="primary" onClick={this.onCreate}>
+            Create Case
+          </Button>
+        </div>
+
+        <Snackbar
+          anchorOrigin={{ vertical, horizontal }}
+          open={this.state.isSuccess}
+
+          SnackbarContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={<span id="message-id">Case Saved!</span>}
+        />
+
+
+      </div>
     );
   }
 }
