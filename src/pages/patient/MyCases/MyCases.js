@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
 class MyCases extends Component {
-  render() {
-    return <div>MY Cases list</div>;
-  }
+    render() {
+        return <div>MY Cases list</div>;
+    }
 }
 
 MyCases.propTypes = {};
