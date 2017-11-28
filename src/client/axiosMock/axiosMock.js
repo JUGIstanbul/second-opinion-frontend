@@ -1,16 +1,16 @@
 import Axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { signIn } from './Response/signIn';
-import { signUp } from './Response/signUp';
-import { updateAccountInfo } from './Response/updateAccountInfo';
-import { viewAccountInfo } from './Response/viewAccountInfo';
-import { createCase } from './Response/createCase';
+import {signIn} from './Response/signIn';
+import {signUp} from './Response/signUp';
+import {updateAccountInfo} from './Response/updateAccountInfo';
+import {viewAccountInfo} from './Response/viewAccountInfo';
+import {createCase} from './Response/createCase';
 import {
-  AXIOS_MOCK_SIGN_IN,
-  AXIOS_MOCK_SIGN_UP,
-  AXIOS_MOCK_UPDATE_ACCOUNT_INFO,
-  AXIOS_MOCK_VIEW_ACCOUNT_INFO,
-  CREATE_CASE,
+    AXIOS_MOCK_SIGN_IN,
+    AXIOS_MOCK_SIGN_UP,
+    AXIOS_MOCK_UPDATE_ACCOUNT_INFO,
+    AXIOS_MOCK_VIEW_ACCOUNT_INFO,
+    CREATE_CASE,
 } from '../api';
 
 // This sets the mock adapter on the default instance
