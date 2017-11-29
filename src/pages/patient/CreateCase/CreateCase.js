@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Button, Snackbar, Chip, Grid, CardMedia } from 'material-ui';
 import { Button,Snackbar,Chip } from 'material-ui';
 import { connect } from 'react-redux';
 import { DatePicker } from 'material-ui-pickers';
@@ -8,6 +9,7 @@ import { createCase } from '../../../store/action/caseActions';
 import './CreateCase.css';
 
 import { control } from '../../../utils/form';
+import Layout from "../../../layout/Layout";
 
 class CreateCase extends Component {
   constructor(props) {
@@ -61,6 +63,82 @@ class CreateCase extends Component {
       vertical,
       horizontal } = this.state;
     return (
+      <Layout>
+
+        <div style={{width: '100%', position: 'relative', overflow: 'hidden'}}>
+          <Grid container>
+
+            <Grid item xs={12}  style={{ height: '88vh', backgroundColor: 'white', justify: 'center',
+                    display: '-webkit-box',
+                    display: '-webkit-flex',
+                    display: '-ms-flexbox',
+                    display: 'flex',
+                    '-webkit-box-orient': 'vertical',
+                    '-webkit-box-direction': 'normal',
+                    '-webkit-flex-direction': 'column',
+                    '-ms-flex-direction': 'column',
+                    'flex-direction': 'column',
+                    '-webkit-box-pack': 'center',
+                    '-webkit-justify-content': 'center',
+                    '-ms-flex-pack': 'center',
+                    'justify-content': 'center',
+                    '-webkit-box-align': 'center',
+                    '-webkit-align-items': 'center',
+                    '-ms-flex-align': 'center',
+                    'align-items': 'center',
+                    '-webkit-box-flex': '1',
+                    '-webkit-flex': '1',
+                    '-ms-flex': '1',
+                    'flex': '1'
+                  }}>
+              <div>
+                <h2>Create Case</h2>
+
+                <div>
+                  <DatePicker value={illnessStartDate} onChange={this.handleDateChange} />
+                    <br />
+                  <FormField type="textarea" label="symptoms" {...control(this, 'symptoms')} />
+                    <br />
+                  <FormField type="textarea" label="note" {...control(this, 'note')} />
+
+
+                  <div>
+                    <h6>medicine</h6>
+                    {this.state.medicine.map(data => {
+                      return (
+                        <Chip
+                          label={data.label}
+                          key={data.id}
+                          onRequestDelete={this.handleRequestDelete(data)}
+                          className="chip wrapper"
+                        />
+                      );
+                    })}
+                  </div>
+
+                  <Button raised color="primary" onClick={this.onCreate}>
+                    Create Case
+                  </Button>
+                </div>
+
+                <Snackbar
+                  anchorOrigin={{ vertical, horizontal }}
+                  open={this.state.isSuccess}
+
+                  SnackbarContentProps={{
+                    'aria-describedby': 'message-id',
+                  }}
+                  message={<span id="message-id">Case Saved!</span>}
+                />
+              </div>
+            </Grid>
+          </Grid>
+
+
+        </div>
+
+
+      </Layout>
       <div>
         <h2>Create Case</h2>
 
