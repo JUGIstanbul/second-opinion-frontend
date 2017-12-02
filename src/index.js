@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import { normalize } from 'polished';
@@ -22,7 +22,7 @@ injectGlobal`
 
   body {
     margin: 0;
-    padding: 20px;
+    padding: 0;
   }
 
   a {

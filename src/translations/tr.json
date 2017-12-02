@@ -1,3 +1,5 @@
 {
-  "page.title": "Merhaba Dünya!"
+  "page.title": "Merhaba Dünya!",
+  "header.menu.login": "Giriş",
+  "header.menu.register": "Kayıt"
 }

@@ -1,3 +1,5 @@
 {
-  "page.title": "Hello world!"
+  "page.title": "Hello world!",
+  "header.menu.login": "Login",
+  "header.menu.register": "Register"
 }

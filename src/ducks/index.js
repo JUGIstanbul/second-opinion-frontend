@@ -1,1 +1,1 @@
-export { default as sampleFetch } from './sampleFetch';
+export { default as locales } from './locales';
