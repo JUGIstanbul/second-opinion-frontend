@@ -1,6 +1,7 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+import { reducer as formReducer } from 'redux-form';
 import { intlReducer } from 'react-intl-redux';
 import { addLocaleData } from 'react-intl';
 import trLocaleData from 'react-intl/locale-data/tr';
@@ -14,7 +15,8 @@ addLocaleData([...trLocaleData, ...enLocaleData]);
 const loggerMiddleware = createLogger();
 const rootReducers = combineReducers({
   ...reducers,
-  intl: intlReducer
+  intl: intlReducer,
+  form: formReducer
 });
 
 function configureStore() {
