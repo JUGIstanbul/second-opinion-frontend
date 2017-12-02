@@ -31,7 +31,7 @@ class SwitchLocale extends Component {
 }
 
 SwitchLocale.propTypes = {
-  updateLocale: PropTypes.objectOf(PropTypes.string)
+  updateLocale: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => ({
